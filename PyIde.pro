@@ -25,3 +25,6 @@ FORMS    += pyidemainwindow.ui \
     aboutdialog.ui \
     feedbackdialog.ui \
     preferencesdialog.ui
+
+RESOURCES += \
+    pyResourceFile.qrc

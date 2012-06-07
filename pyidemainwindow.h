@@ -18,6 +18,10 @@ public:
 private slots:
     void on_actionAbout_triggered();
 
+    void on_actionSendFeedback_triggered();
+
+    void on_actionQuit_triggered();
+
 private:
     Ui::PyIdeMainWindow *ui;
 };
