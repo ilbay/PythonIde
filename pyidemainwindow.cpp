@@ -17,6 +17,7 @@
 #include "ui_pyidemainwindow.h"
 #include "aboutdialog.h"
 #include "feedbackdialog.h"
+#include "preferencesdialog.h"
 
 PyIdeMainWindow::PyIdeMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::PyIdeMainWindow) {
     ui->setupUi(this);
@@ -38,4 +39,9 @@ void PyIdeMainWindow::on_actionSendFeedback_triggered() {
 
 void PyIdeMainWindow::on_actionQuit_triggered() {
     this->close();
+}
+
+void PyIdeMainWindow::on_actionPreferences_triggered() {
+    PreferencesDialog p;
+    p.exec();
 }

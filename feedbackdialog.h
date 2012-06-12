@@ -35,6 +35,10 @@ public:
     explicit FeedbackDialog(QWidget *parent = 0);
     ~FeedbackDialog();
     
+private slots:
+    void on_closeButton_clicked();
+    void on_sendButton_clicked();
+
 private:
     Ui::FeedbackDialog *ui;
 };

@@ -41,6 +41,8 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_actionPreferences_triggered();
+
 private:
     Ui::PyIdeMainWindow *ui;
 };
