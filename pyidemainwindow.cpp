@@ -13,6 +13,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *********************************************************************************/
 
+#include <QDir>
+#include <QDebug>
+#include <QList>
+#include <QFileInfoList>
 #include "pyidemainwindow.h"
 #include "ui_pyidemainwindow.h"
 #include "aboutdialog.h"
@@ -21,6 +25,18 @@
 
 PyIdeMainWindow::PyIdeMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::PyIdeMainWindow) {
     ui->setupUi(this);
+
+
+    // Adding Python examples to hello page.
+    QDir exampleDir("../PyIde/codeSnippets");
+    QFileInfoList exampleList;
+    exampleList=exampleDir.entryInfoList(QDir::Files);
+
+    for(int i=0; i<exampleList.size(); i++) {
+        ui->listWidgetExamples->addItem(exampleList.at(i).fileName());
+    }
+
+
 }
 
 PyIdeMainWindow::~PyIdeMainWindow() {
