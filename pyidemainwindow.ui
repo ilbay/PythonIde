@@ -118,21 +118,29 @@ p, li { white-space: pre-wrap; }
      <string>Tools</string>
     </property>
     <addaction name="actionWordCount"/>
-    <addaction name="actionOpen_Interactive_Python"/>
+    <addaction name="actionOpenInteractivePython"/>
    </widget>
    <widget class="QMenu" name="menuSource">
     <property name="title">
      <string>Source</string>
     </property>
-    <addaction name="actionInsert_Code"/>
-    <addaction name="actionToggle_Comment"/>
-    <addaction name="actionShift_Left"/>
-    <addaction name="actionShift_Right"/>
+    <addaction name="actionInsertCode"/>
+    <addaction name="actionToggleComment"/>
+    <addaction name="actionShiftLeft"/>
+    <addaction name="actionShiftRight"/>
+   </widget>
+   <widget class="QMenu" name="menuRun">
+    <property name="title">
+     <string>Run</string>
+    </property>
+    <addaction name="actionInterprete"/>
+    <addaction name="actionRun"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuSource"/>
    <addaction name="menuTool"/>
+   <addaction name="menuRun"/>
    <addaction name="menuSettings"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -143,11 +151,24 @@ p, li { white-space: pre-wrap; }
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionCut"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionPaste"/>
+   <addaction name="separator"/>
+   <addaction name="actionRun"/>
+   <addaction name="separator"/>
+   <addaction name="actionQuit"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
   </action>
   <action name="actionHelp">
@@ -176,16 +197,34 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/document-open.png</normaloff>:/files/images/icons/document-open.png</iconset>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="actionSave">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/document-save.png</normaloff>:/files/images/icons/document-save.png</iconset>
+   </property>
    <property name="text">
     <string>Save</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/document-save-as.png</normaloff>:/files/images/icons/document-save-as.png</iconset>
+   </property>
    <property name="text">
     <string>Save As</string>
    </property>
@@ -201,18 +240,39 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionCut">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/edit-cut.png</normaloff>:/files/images/icons/edit-cut.png</iconset>
+   </property>
    <property name="text">
     <string>Cut</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
   </action>
   <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/edit-copy.png</normaloff>:/files/images/icons/edit-copy.png</iconset>
+   </property>
    <property name="text">
     <string>Copy</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
   </action>
   <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/edit-paste.png</normaloff>:/files/images/icons/edit-paste.png</iconset>
+   </property>
    <property name="text">
     <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
    </property>
   </action>
   <action name="actionDelete">
@@ -225,33 +285,62 @@ p, li { white-space: pre-wrap; }
     <string>Word Count</string>
    </property>
   </action>
-  <action name="actionInsert_Code">
+  <action name="actionInsertCode">
    <property name="text">
     <string>Insert Code</string>
    </property>
+   <property name="shortcut">
+    <string>Alt+Ins</string>
+   </property>
   </action>
-  <action name="actionToggle_Comment">
+  <action name="actionToggleComment">
    <property name="text">
     <string>Toggle Comment</string>
    </property>
   </action>
-  <action name="actionShift_Left">
+  <action name="actionShiftLeft">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/format-indent-less.png</normaloff>:/files/images/icons/format-indent-less.png</iconset>
+   </property>
    <property name="text">
     <string>Shift Left</string>
    </property>
+   <property name="shortcut">
+    <string>Alt+Shift+Left</string>
+   </property>
   </action>
-  <action name="actionShift_Right">
+  <action name="actionShiftRight">
+   <property name="icon">
+    <iconset resource="pyResourceFile.qrc">
+     <normaloff>:/files/images/icons/format-indent-more.png</normaloff>:/files/images/icons/format-indent-more.png</iconset>
+   </property>
    <property name="text">
     <string>Shift Right</string>
    </property>
+   <property name="shortcut">
+    <string>Alt+Shift+Right</string>
+   </property>
   </action>
-  <action name="actionOpen_Interactive_Python">
+  <action name="actionOpenInteractivePython">
    <property name="text">
     <string>Open Interactive Python</string>
    </property>
   </action>
+  <action name="actionInterprete">
+   <property name="text">
+    <string>Interprete</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="text">
+    <string>Run</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="pyResourceFile.qrc"/>
+ </resources>
  <connections/>
 </ui>

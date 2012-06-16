@@ -38,6 +38,11 @@ PyIdeMainWindow::PyIdeMainWindow(QWidget *parent) : QMainWindow(parent), ui(new 
         ui->listWidgetExamples->addItem(exampleList.at(i).fileName());
     }
 
+    ui->actionCut->setEnabled(false);
+    ui->actionCopy->setEnabled(false);
+    ui->actionPaste->setEnabled(false);
+    ui->actionDelete->setEnabled(false);
+
 
 }
 

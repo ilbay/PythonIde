@@ -1,5 +1,20 @@
 <RCC>
     <qresource prefix="/files">
         <file>images/splashScreen.png</file>
+        <file>images/icons/About icons</file>
+        <file>images/icons/document-new.png</file>
+        <file>images/icons/document-open.png</file>
+        <file>images/icons/document-save.png</file>
+        <file>images/icons/document-save-as.png</file>
+        <file>images/icons/edit-clear.png</file>
+        <file>images/icons/edit-copy.png</file>
+        <file>images/icons/edit-cut.png</file>
+        <file>images/icons/edit-delete.png</file>
+        <file>images/icons/edit-find.png</file>
+        <file>images/icons/edit-paste.png</file>
+        <file>images/icons/edit-redo.png</file>
+        <file>images/icons/format-indent-less.png</file>
+        <file>images/icons/format-indent-more.png</file>
+        <file>images/icons/system-software-update.png</file>
     </qresource>
 </RCC>
