@@ -78,7 +78,12 @@ p, li { white-space: pre-wrap; }
      <addaction name="actionProject"/>
     </widget>
     <addaction name="menuNew"/>
+    <addaction name="separator"/>
     <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
@@ -96,7 +101,38 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="actionPreferences"/>
    </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
+   </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionWordCount"/>
+    <addaction name="actionOpen_Interactive_Python"/>
+   </widget>
+   <widget class="QMenu" name="menuSource">
+    <property name="title">
+     <string>Source</string>
+    </property>
+    <addaction name="actionInsert_Code"/>
+    <addaction name="actionToggle_Comment"/>
+    <addaction name="actionShift_Left"/>
+    <addaction name="actionShift_Right"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuSource"/>
+   <addaction name="menuTool"/>
    <addaction name="menuSettings"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -142,6 +178,76 @@ p, li { white-space: pre-wrap; }
   <action name="actionOpen">
    <property name="text">
     <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionWordCount">
+   <property name="text">
+    <string>Word Count</string>
+   </property>
+  </action>
+  <action name="actionInsert_Code">
+   <property name="text">
+    <string>Insert Code</string>
+   </property>
+  </action>
+  <action name="actionToggle_Comment">
+   <property name="text">
+    <string>Toggle Comment</string>
+   </property>
+  </action>
+  <action name="actionShift_Left">
+   <property name="text">
+    <string>Shift Left</string>
+   </property>
+  </action>
+  <action name="actionShift_Right">
+   <property name="text">
+    <string>Shift Right</string>
+   </property>
+  </action>
+  <action name="actionOpen_Interactive_Python">
+   <property name="text">
+    <string>Open Interactive Python</string>
    </property>
   </action>
  </widget>

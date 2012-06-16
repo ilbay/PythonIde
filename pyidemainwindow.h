@@ -33,6 +33,9 @@ class PyIdeMainWindow : public QMainWindow {
 public:
     explicit PyIdeMainWindow(QWidget *parent = 0);
     ~PyIdeMainWindow();
+
+protected:
+    void closeEvent(QCloseEvent *event) ;
     
 private slots:
     void on_actionAbout_triggered();

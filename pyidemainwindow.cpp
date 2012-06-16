@@ -17,6 +17,8 @@
 #include <QDebug>
 #include <QList>
 #include <QFileInfoList>
+#include <QMessageBox>
+#include <QCloseEvent>
 #include "pyidemainwindow.h"
 #include "ui_pyidemainwindow.h"
 #include "aboutdialog.h"
@@ -38,6 +40,24 @@ PyIdeMainWindow::PyIdeMainWindow(QWidget *parent) : QMainWindow(parent), ui(new 
 
 
 }
+
+void PyIdeMainWindow::closeEvent(QCloseEvent *event) {
+    bool willQuit=false;
+
+    QMessageBox::StandardButton ret;
+    ret = QMessageBox::warning(this, tr("Application"), tr("Are you sure to quit?"), QMessageBox::Ok | QMessageBox::Cancel);
+
+    if(ret == QMessageBox::Ok)
+        willQuit=true;
+    else
+        willQuit=false;
+
+    if (willQuit==true) {
+        event->accept();
+     } else {
+        event->ignore();
+     }
+ }
 
 PyIdeMainWindow::~PyIdeMainWindow() {
     delete ui;
