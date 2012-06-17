@@ -17,6 +17,13 @@
 #define PYIDEMAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTextEdit>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QListWidget>
+#include <QPushButton>
+#include <QWidget>
+#include <QGridLayout>
 
 namespace Ui {
 class PyIdeMainWindow;
@@ -39,15 +46,18 @@ protected:
     
 private slots:
     void on_actionAbout_triggered();
-
     void on_actionSendFeedback_triggered();
-
     void on_actionQuit_triggered();
-
     void on_actionPreferences_triggered();
+    void buttonClicked();
 
 private:
     Ui::PyIdeMainWindow *ui;
+    QPushButton *denemeButton;
+    QTextEdit *welcomePage;
+    QListWidget *exampleListWidget;
+    QVBoxLayout *v1;
+
 };
 
 #endif // PYIDEMAINWINDOW_H

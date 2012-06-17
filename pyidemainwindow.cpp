@@ -18,7 +18,12 @@
 #include <QList>
 #include <QFileInfoList>
 #include <QMessageBox>
+#include <QtCore>
+#include <QTextEdit>
+#include <QVBoxLayout>
 #include <QCloseEvent>
+#include <QPushButton>
+#include <QWidget>
 #include "pyidemainwindow.h"
 #include "ui_pyidemainwindow.h"
 #include "aboutdialog.h"
@@ -28,21 +33,35 @@
 PyIdeMainWindow::PyIdeMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::PyIdeMainWindow) {
     ui->setupUi(this);
 
+    ui->actionCut->setEnabled(false);
+    ui->actionCopy->setEnabled(false);
+    ui->actionPaste->setEnabled(false);
+    ui->actionDelete->setEnabled(false);
 
+    denemeButton=new QPushButton("click me");
+
+    welcomePage=new QTextEdit;
+    welcomePage->setText("<h1>Welcome to Python ide.<h1>");
+    welcomePage->setReadOnly(true);
+
+    exampleListWidget=new QListWidget(this);
     // Adding Python examples to hello page.
     QDir exampleDir("../PyIde/codeSnippets");
     QFileInfoList exampleList;
     exampleList=exampleDir.entryInfoList(QDir::Files);
 
     for(int i=0; i<exampleList.size(); i++) {
-        ui->listWidgetExamples->addItem(exampleList.at(i).fileName());
+        exampleListWidget->addItem(exampleList.at(i).fileName());
     }
 
-    ui->actionCut->setEnabled(false);
-    ui->actionCopy->setEnabled(false);
-    ui->actionPaste->setEnabled(false);
-    ui->actionDelete->setEnabled(false);
 
+    v1=new QVBoxLayout();
+    v1->addWidget(denemeButton);
+    v1->addWidget(welcomePage);
+    v1->addWidget(exampleListWidget);
+    this->centralWidget()->setLayout(v1);
+
+    connect(denemeButton, SIGNAL(clicked()), this, SLOT(buttonClicked()));
 
 }
 
@@ -85,4 +104,15 @@ void PyIdeMainWindow::on_actionQuit_triggered() {
 void PyIdeMainWindow::on_actionPreferences_triggered() {
     PreferencesDialog p;
     p.exec();
+}
+
+void PyIdeMainWindow::buttonClicked() {
+    qDebug() << "bar";
+    delete welcomePage;
+    delete denemeButton;
+    delete exampleListWidget;
+
+    QPushButton *qpb=new QPushButton("bar");
+    v1->addWidget(qpb);
+
 }
